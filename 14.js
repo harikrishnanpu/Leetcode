@@ -3,24 +3,25 @@
  * @return {string}
  */
 
-let strs = ["flower","flow","flight"]
+let strs = ["flower","flow","flight","lf"]
 
 var longestCommonPrefix = function(strs) {
 
-    for(let i=0;i < strs.length; i++){
+    let result = "";
 
-        let currChar = strs[0][i];
+    for (let i = 0; i < strs[0].length; i++) {
+        let currentChar = strs[0][i];
 
-        for(let j=1; j < strs.length; j++){
-
-            
-
-
+        for (let j = 1; j < strs.length; j++) {
+            if (i >= strs[j].length || strs[j][i] !== currentChar) {
+                return result; 
+            }
         }
 
-
-
+        result += currentChar;
     }
+
+    return result
 
 
 };
